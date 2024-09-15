@@ -204,8 +204,9 @@
     </footer>
 </div>
 
-<!-- jsPDF library -->
+<!-- jsPDF and jsPDF-autotable -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -229,18 +230,26 @@
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        // Adding the text/content to the PDF
+        // Add sections as table cells using jsPDF autoTable
         doc.text("Mostafa Shaban Ahmed - CV", 10, 10);
-        doc.text("Phone: +20 0122 84 47 678", 10, 20);
-        doc.text("Email: mostafa.shaban.iti.be@gmail.com", 10, 30);
-        doc.text("Location: Alexandria, Egypt", 10, 40);
-        doc.text("LinkedIn: linkedin.com/in/mostafa-shaban-iti-be", 10, 50);
-        doc.text("Military Status: Final Exempt", 10, 60);
-        doc.text("Date Of Birth: 21/1/1993", 10, 70);
-
-        // Example of adding more sections
-        doc.text("Objective:", 10, 90);
-        doc.text("I am a graduate of ITI intensive training program for Software Testing...", 10, 100);
+        
+        doc.autoTable({
+            startY: 20,
+            head: [['Section', 'Details']],
+            body: [
+                ['Phone', '+20 0122 84 47 678'],
+                ['Email', 'mostafa.shaban.iti.be@gmail.com'],
+                ['Location', 'Alexandria, Egypt'],
+                ['LinkedIn', 'linkedin.com/in/mostafa-shaban-iti-be'],
+                ['Military Status', 'Final Exempt'],
+                ['Date Of Birth', '21/1/1993'],
+                ['Objective', 'I am a graduate of ITI intensive training program for Software Testing. I am a Software Quality Control Engineer (QC) seeking a challenging career opportunity in the field of Software Engineering (Back-end Developer) with a focus on Java that utilizes my previous work experience and my skills.'],
+                ['Education', 'Software Testing - Information Technology Institute (ITI) - Ministry of Communication and Information Technology (MCIT) - August 2021 to November 2021. Bachelor of Civil Engineering - Alexandria University - July 2019 (Grade: Fair). Graduation Project - Harbor (Grade: Excellent).'],
+                ['Experience', 'Software Quality Control Engineer (QC) - Integrated Solutions For Ports (ISFP) - February 2022 to Present. Testing SPS3 System and modules like SPS-Gates, SPS services. Testing Ministry of Justice System (MOJ), and mobile applications. Upgrading modules from SPS1 & SPS2 Systems to SPS3 System. Applying functional testing (GUI, API, UI) using Postman and JMeter for performance testing. Training fresh software quality engineers.'],
+                ['Skills', 'Manual Testing, Automation Testing with Selenium, API Testing with Postman. Performance Testing with JMeter, Backend Development using Java and Spring Boot. Database Fundamentals (SQL), OOP (Java, C++), Web Technologies (HTML, CSS).'],
+                ['Certifications', 'ISTQB Certified Tester Foundation Level (CTFL) - Credential ID: 221122037. Google IT Support Professional Certificate - Credential ID: AJLFY6NC9GAE']
+            ],
+        });
 
         // Save the PDF
         doc.save("Mostafa_Shaban_CV.pdf");
