@@ -90,6 +90,46 @@
             margin: 0 5px;
             padding: 10px 20px;
         }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-group .btn {
+                width: 100%;
+                margin: 5px 0;
+                padding: 15px;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .btn-group .btn {
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -105,7 +145,7 @@
     </header>
 
     <!-- Buttons to toggle sections -->
-    <div class="btn-group d-flex justify-content-center">
+    <div class="btn-group d-flex justify-content-center flex-wrap">
         <button class="btn btn-primary" onclick="toggleSection('objective')">Objective</button>
         <button class="btn btn-primary" onclick="toggleSection('education')">Education</button>
         <button class="btn btn-primary" onclick="toggleSection('experience')">Experience</button>
