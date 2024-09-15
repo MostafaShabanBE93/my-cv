@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostafa Shaban CV</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Animations */
+        section {
+            display: none; /* Sections are hidden by default */
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Make visible with animation */
+        .show-section {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header styles */
+        h1 {
+            font-size: 36px;
+            color: #0073e6;
+            text-align: center;
+            animation: colorChange 5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: #0073e6; }
+            50% { color: #ff6347; }
+            100% { color: #0073e6; }
+        }
+
+        /* Button styling */
+        .btn-primary {
+            margin: 10px;
+            background-color: #0073e6;
+            border-color: #0073e6;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding-top: 10px;
+            border-top: 2px solid #333;
+        }
+
+        /* Smooth fade in effect for sections */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        /* Active section becomes visible */
+        .fade-in.show-section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Button group styling */
+        .btn-group .btn {
+            margin: 0 5px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Mostafa Shaban Ahmed</h1>
+        <p><strong>Phone:</strong> +20 0122 84 47 678</p>
+        <p><strong>Email:</strong> <a href="mailto:mostafa.shaban.iti.be@gmail.com">mostafa.shaban.iti.be@gmail.com</a></p>
+        <p><strong>Location:</strong> Alexandria, Egypt</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mostafa-shaban-iti-be">linkedin.com/in/mostafa-shaban-iti-be</a></p>
+        <p><strong>Military Status:</strong> Final Exempt | <strong>Date Of Birth:</strong> 21/1/1993</p>
+    </header>
+
+    <!-- Buttons to toggle sections -->
+    <div class="btn-group d-flex justify-content-center">
+        <button class="btn btn-primary" onclick="toggleSection('objective')">Objective</button>
+        <button class="btn btn-primary" onclick="toggleSection('education')">Education</button>
+        <button class="btn btn-primary" onclick="toggleSection('experience')">Experience</button>
+        <button class="btn btn-primary" onclick="toggleSection('skills')">Skills</button>
+        <button class="btn btn-primary" onclick="toggleSection('certifications')">Certifications</button>
+    </div>
+
+    <!-- Sections -->
+    <section id="objective" class="fade-in">
+        <h2>Objective</h2>
+        <p>I am a graduate of ITI intensive training program for Software Testing. I am a Software Quality Control Engineer (QC) seeking a challenging career opportunity in the field of Software Engineering (Back-end Developer) with a focus on Java that utilizes my previous work experience and my skills.</p>
+    </section>
+
+    <section id="education" class="fade-in">
+        <h2>Education</h2>
+        <p><strong>Software Testing</strong> - Information Technology Institute (ITI) - Ministry of Communication and Information Technology (MCIT) - August 2021 to November 2021</p>
+        <p><strong>Bachelor of Civil Engineering</strong> - Alexandria University - July 2019 (Grade: Fair)</p>
+        <p><strong>Graduation Project</strong> - Harbor (Grade: Excellent)</p>
+    </section>
+
+    <section id="experience" class="fade-in">
+        <h2>Experience</h2>
+        <h3>Software Quality Control Engineer (QC) - Integrated Solutions For Ports (ISFP)</h3>
+        <p><em>February 2022 to Present</em></p>
+        <ul>
+            <li>Testing SPS3 System and modules like SPS-Gates, SPS services.</li>
+            <li>Testing Ministry of Justice System (MOJ), and mobile applications.</li>
+            <li>Upgrading modules from SPS1 & SPS2 Systems to SPS3 System.</li>
+            <li>Applying functional testing (GUI, API, UI) using Postman and JMeter for performance testing.</li>
+            <li>Training fresh software quality engineers.</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <h2>Skills Summary</h2>
+        <ul>
+            <li>Manual Testing, Automation Testing with Selenium, API Testing with Postman.</li>
+            <li>Performance Testing with JMeter, Backend Development using Java and Spring Boot.</li>
+            <li>Database Fundamentals (SQL), OOP (Java, C++), Web Technologies (HTML, CSS).</li>
+        </ul>
+    </section>
+
+    <section id="certifications" class="fade-in">
+        <h2>Certifications</h2>
+        <p><strong>ISTQB Certified Tester Foundation Level (CTFL)</strong> - Credential ID: 221122037</p>
+        <p><strong>Google IT Support Professional Certificate</strong> - Credential ID: <a href="https://www.coursera.org/account/accomplishments/professional-cert/AJLFY6NC9GAE">AJLFY6NC9GAE</a></p>
+    </section>
+
+    <footer>
+        <p><strong>References:</strong> Available upon request.</p>
+    </footer>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.toggle('show-section');
+            } else {
+                section.classList.remove('show-section');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
