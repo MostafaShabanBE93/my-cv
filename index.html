@@ -194,10 +194,18 @@
         <p><strong>Google IT Support Professional Certificate</strong> - Credential ID: <a href="https://www.coursera.org/account/accomplishments/professional-cert/AJLFY6NC9GAE">AJLFY6NC9GAE</a></p>
     </section>
 
+    <!-- Button to download PDF -->
+    <div class="text-center">
+        <button class="btn btn-success" onclick="downloadPDF()">Download as PDF</button>
+    </div>
+
     <footer>
         <p><strong>References:</strong> Available upon request.</p>
     </footer>
 </div>
+
+<!-- jsPDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -214,6 +222,28 @@
                 section.classList.remove('show-section');
             }
         });
+    }
+
+    // Function to download the CV as a PDF
+    function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Adding the text/content to the PDF
+        doc.text("Mostafa Shaban Ahmed - CV", 10, 10);
+        doc.text("Phone: +20 0122 84 47 678", 10, 20);
+        doc.text("Email: mostafa.shaban.iti.be@gmail.com", 10, 30);
+        doc.text("Location: Alexandria, Egypt", 10, 40);
+        doc.text("LinkedIn: linkedin.com/in/mostafa-shaban-iti-be", 10, 50);
+        doc.text("Military Status: Final Exempt", 10, 60);
+        doc.text("Date Of Birth: 21/1/1993", 10, 70);
+
+        // Example of adding more sections
+        doc.text("Objective:", 10, 90);
+        doc.text("I am a graduate of ITI intensive training program for Software Testing...", 10, 100);
+
+        // Save the PDF
+        doc.save("Mostafa_Shaban_CV.pdf");
     }
 </script>
 
